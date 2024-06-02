@@ -19,6 +19,9 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    App\Service\ImdbApiService:
+        arguments:
+            $apiKey: '%env(IMDB_API_KEY)%'  # Injectez votre clé API depuis les variables d'environnement
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

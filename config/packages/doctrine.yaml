@@ -1,5 +1,11 @@
 doctrine:
     dbal:
+        driver: 'pdo_mysql'
+        mapping_types:
+            enum: string
+        platform_service: App\DBAL\Platforms\CustomMySQLPlatform
+        types:
+            significance: App\DBAL\Types\SignificanceType
         url: '%env(resolve:DATABASE_URL)%'
 
         # IMPORTANT: You MUST configure your server version,
